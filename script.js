@@ -56,7 +56,7 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
 
     const resultsDiv = document.getElementById("searchResults");
     if (querySnapshot.empty) {
-      resultsDiv.innerHTML = "<p>該当するカードを持っている人はいません。</p>";
+      resultsDiv.innerHTML = "<p>該当するカードを持っている人は登録されていません。</p>";
       return;
     }
 
