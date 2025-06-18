@@ -17,24 +17,42 @@ const auth = getAuth(app);
 
 signInAnonymously(auth).catch(console.error);
 
+// 登録
 document.getElementById("register-form").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const data = {
-    grade: parseInt(document.getElementById("grade").value),
-    classNum: parseInt(document.getElementById("classNum").value),
-    number: parseInt(document.getElementById("number").value),
-    color: document.getElementById("color").value,
-    mark: document.getElementById("mark").value,
-    value: document.getElementById("value").value
-  };
-  try {
-    await addDoc(collection(db, "cards"), data);
-    alert("登録しました！");
-    document.getElementById("register-form").reset();
-  } catch (error) {
-    console.error("登録失敗:", error);
-    alert("登録に失敗しました");
+
+  const grade = parseInt(document.getElementById("grade").value);
+  const classNum = parseInt(document.getElementById("classNum").value);
+  const number = parseInt(document.getElementById("number").value);
+  const color = document.getElementById("color").value;
+  const mark = document.getElementById("mark").value;
+  const value = document.getElementById("value").value;
+
+  const cardsRef = collection(db, "cards");
+
+  // 重複チェッククエリ
+  const q = query(cardsRef,
+    where("grade", "==", grade),
+    where("classNum", "==", classNum),
+    where("number", "==", number),
+    where("color", "==", color),
+    where("mark", "==", mark),
+    where("value", "==", value)
+  );
+
+  const snapshot = await getDocs(q);
+
+  if (!snapshot.empty) {
+    alert("このカード情報はすでに登録されています！");
+    return;
   }
+
+  // 新規登録
+  await addDoc(cardsRef, {
+    grade, classNum, number, color, mark, value
+  });
+
+  alert("登録しました！");
 });
 
 document.getElementById("searchForm").addEventListener("submit", async (e) => {
