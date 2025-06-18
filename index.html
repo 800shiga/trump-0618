@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>カードマッチング</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>カード登録</h1>
+  <form id="register-form">
+    <input type="number" id="grade" placeholder="学年" required><br>
+    <input type="number" id="classNum" placeholder="組" required><br>
+    <input type="number" id="number" placeholder="番号" required><br>
+    <select id="color" required>
+      <option value="赤">赤</option>
+      <option value="青">青</option>
+    </select><br>
+    <select id="mark" required>
+      <option value="♡">♡</option>
+      <option value="♤">♤</option>
+      <option value="◇">◇</option>
+      <option value="♧">♧</option>
+    </select><br>
+    <select id="value" required>
+      <option>A</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+      <option>J</option>
+      <option>Q</option>
+      <option>K</option>
+      <option>ジョーカー</option>
+    </select><br>
+    <button type="submit">登録</button>
+  </form>
+
+  <hr>
+  <h2>カード検索 <span style="font-size: 0.9em; color: gray; margin-left: 10px;">（自分のカードの情報を入力してください）</span></h2>
+  <form id="searchForm">
+    <label>カードの色：
+      <select id="searchColor" required>
+        <option value="">選択してください</option>
+        <option value="赤">赤</option>
+        <option value="青">青</option>
+      </select>
+    </label>
+    <label>カードの記号：
+      <select id="searchMark" required>
+        <option value="">選択してください</option>
+        <option value="♡">♡</option>
+        <option value="♤">♤</option>
+        <option value="◇">◇</option>
+        <option value="♧">♧</option>
+        <option value="ジョーカー">ジョーカー</option>
+      </select>
+    </label>
+    <label>カードの数字：
+      <select id="searchNumber" required>
+        <option value="">選択してください</option>
+        <option value="A">A</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="J">J</option>
+        <option value="Q">Q</option>
+        <option value="K">K</option>
+      </select>
+    </label>
+    <button type="submit">検索</button>
+  </form>
+
+  <div id="searchResults"></div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

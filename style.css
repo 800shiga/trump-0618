@@ -1,0 +1,90 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 15px;
+    color: #262626;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  input, select, button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: 0.2s;
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+    border-color: #a865c9; /* インスタっぽい紫系 */
+  }
+  
+  button {
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  #searchResults ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #searchResults li {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  /* スマホ対応 */
+  @media screen and (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+  
+    form {
+      padding: 15px;
+    }
+  
+    input, select, button {
+      padding: 12px;
+      font-size: 1rem;
+    }
+  
+    h1, h2 {
+      font-size: 1.4rem;
+    }
+  }
+  
